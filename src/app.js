@@ -24,7 +24,7 @@ app.use('/api/sessions', sessionsRouter);
 const mongoInstance = async () => {
     try {
         if (!MONGO_URL) {
-            throw new Error("La variable MONGO_URL no está definida en el archivo .env");
+            throw new Error("Falta la variable MONGO_URL en la nube de Railway");
         }
         await mongoose.connect(MONGO_URL);
         console.log("Conexión exitosa a MongoDB Atlas");
